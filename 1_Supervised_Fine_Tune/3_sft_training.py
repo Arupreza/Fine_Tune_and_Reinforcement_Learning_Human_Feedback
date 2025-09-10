@@ -11,6 +11,7 @@ from transformers import (
 )
 from peft import LoraConfig
 from trl import SFTTrainer, SFTConfig
+import sys
 
 # =======================================================
 # 1. Environment & Authentication
