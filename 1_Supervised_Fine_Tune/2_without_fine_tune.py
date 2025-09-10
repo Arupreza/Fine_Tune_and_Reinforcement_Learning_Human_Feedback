@@ -110,7 +110,8 @@ def model_predict(prompt):
 true_prices = []
 pred_prices = []
 
-for row in tqdm(test, desc="Evaluating"):
+subset = test.select(range(100))   # 100-row subset as Dataset
+for row in tqdm(subset, desc="Evaluating"):
     y_true = float(row["price"])
     y_pred = model_predict(row["text"])
     true_prices.append(y_true)
